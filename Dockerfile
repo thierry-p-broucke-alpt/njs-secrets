@@ -13,10 +13,6 @@ RUN npm install
 COPY . .
 
 # Set the environment variables for MySQL connection
-ENV MYSQL_HOST=your_mysql_host
-ENV MYSQL_USER=help
-ENV MYSQL_PASSWORD=help
-ENV MYSQL_DATABASE=helpinformation
 
 # Expose the port if your application listens on a specific port
 # EXPOSE 3000
