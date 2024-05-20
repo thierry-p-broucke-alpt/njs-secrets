@@ -2,14 +2,14 @@ const mysql = require('mysql');
 
 // Create a connection pool
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'help',
-  password: 'helpM3Pl3as!!!',
-  database: 'helpinformation'
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE
 });
 
-// Query to get the tables information
-const query = 'select * from information';
+// Query to get the table data
+const query = 'SELECT * FROM information';
 
 // Execute the query
 pool.query(query, (err, results) => {
@@ -18,9 +18,9 @@ pool.query(query, (err, results) => {
     return;
   }
 
-  console.log('Tables in the "helpinformation" database:');
+  console.log('Data from the "information" table:');
   results.forEach(row => {
-        console.log(row);
+    console.log(row);
   });
 
   // Close the connection pool when done
