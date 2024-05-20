@@ -18,4 +18,4 @@ COPY . .
 # EXPOSE 3000
 
 # Start the application
-CMD ["node", "nodejs.js"]
+CMD ["node", "dbCon.js"]
