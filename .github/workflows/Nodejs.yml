@@ -18,5 +18,5 @@ jobs:
       env:
         IMAGE_TAG: ${{ github.sha }}
       run: |
-        docker build -t nodejs:$IMAGE_TAG -e MYSQL_HOST=$MYSQL_HOST -e MYSQL_USER=$MYSQL_USER -e MYSQL_PASSWORD=$MYSQL_PASSWORD -e MYSQL_DATABASE=$MYSQL_DATABASE --no-cache .
+        docker build -t nodejs:$IMAGE_TAG --build-arg MYSQL_HOST=$MYSQL_HOST --build-arg MYSQL_USER=$MYSQL_USER --build-arg MYSQL_PASSWORD=$MYSQL_PASSWORD --build-arg MYSQL_DATABASE=$MYSQL_DATABASE --no-cache .
         docker run -d --name nodejsdock nodejs:$IMAGE_TAG  
