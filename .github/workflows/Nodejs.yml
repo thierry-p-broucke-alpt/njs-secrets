@@ -1,0 +1,14 @@
+name: Send My Pass
+on : workflow_dispatch
+
+jobs:
+  install-mysql:
+    runs-on: self-hosted
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Install Mysql NodeJs Client
+      run : |
+        npm install mysql
+    - name: Run Check DB Information
+      
